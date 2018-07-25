@@ -12,7 +12,10 @@ install:
 
 jobs:
   include:
-    - stage: test
+    - stage: "Tests"
+      name: "A Amphorae"
       script: bats Amphorae/A/*
-      script: bats Amphorae/S/*
+    - script: bats Amphorae/S/*
+      name: "S Amphorae"
+
 
