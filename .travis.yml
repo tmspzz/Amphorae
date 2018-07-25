@@ -13,8 +13,6 @@ install:
 jobs:
   include:
     - stage: test
-      script:
-        - bats Amphorae/A/* 
-      script:
-        - bats Amphorae/S/*
+      script: bats Amphorae/A/*
+      script: bats Amphorae/S/*
 
