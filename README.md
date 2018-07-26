@@ -25,7 +25,7 @@ Don't over populate a folder for the sake of parallelizing [Travis](https://trav
 To have [Travis run Amphorae](https://travis-ci.org/blender/Amphorae) of new folder `XYZ` add a stage to the [.travis.yml](https://github.com/blender/Amphorae/blob/master/.travis.yml) like so:
 
 ```yaml
-- script: bats Amphorae/XYZ/*
+- script: travis_wait 30 bats Amphorae/XYZ/*
   name: "XYZ Amphorae"
 ```
   
