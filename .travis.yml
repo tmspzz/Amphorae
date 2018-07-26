@@ -17,5 +17,7 @@ jobs:
       script: bats Amphorae/A/*
     - script: bats Amphorae/S/*
       name: "S Amphorae"
+    - script: bats Amphorae/R/*
+      name: "R Amphorae"
 
 
