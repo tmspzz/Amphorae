@@ -1,3 +1,6 @@
+![](Resources/Images/amphorae.png)
+
+
 # Amphorae [![Build Status](https://travis-ci.org/blender/Amphorae.svg?branch=master)](https://travis-ci.org/blender/Amphorae)
 
 Carthage compatibility tests
@@ -11,6 +14,7 @@ From Wikipedia:
 - [Amphorae organization](#amphorae-organization)
 - [Amphora template](#amphora-template)
 - [Travis screenshots](#travis-screenshots)
+- [Licenses](#licenses)
 
 ## What is an Amphora
 
@@ -118,3 +122,9 @@ Not all projects are the same so customisation is required here and there.
 
 ## Travis screenshots
 ![Travis Amphorae Stages](Resources/Images/travis-screenshot.png)
+
+## Licenses
+
+The project is under MIT License.
+
+The logo is curtesy of [gotatiana.com](https://gotatiana.com/) .
