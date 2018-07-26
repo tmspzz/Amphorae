@@ -1,25 +1,44 @@
-os: osx
-language: objective-c
-osx_image: xcode9.4
-
 branches:
   only:
     - master
 
-install:
-  - brew update
-  - brew install bats-core
-
-jobs:
+maxtix:
   include:
-    - stage: "Tests"
-      script: travis_wait 30 bats Amphorae/A/*
-      name: "A Amphorae"
-    - script: travis_wait 30 bats Amphorae/C/*
-      name: "C Amphorae"
-    - script: travis_wait 30 bats Amphorae/S/*
-      name: "S Amphorae"
-    - script: travis_wait 30 bats Amphorae/R/*
-      name: "R Amphorae"
-
-
+  - os: osx
+    language: objective-c
+    osx_image: xcode9.4    
+    install:
+      - brew update
+      - brew install bats-core  
+    name: "Carthage latest"  
+    jobs:
+      include:
+        - stage: "Tests"
+          script: travis_wait 30 bats Amphorae/A/*
+          name: "A Amphorae"
+        - script: travis_wait 30 bats Amphorae/C/*
+          name: "C Amphorae"
+        - script: travis_wait 30 bats Amphorae/S/*
+          name: "S Amphorae"
+        - script: travis_wait 30 bats Amphorae/R/*
+          name: "R Amphorae"
+  - os: osx
+    language: objective-c
+    osx_image: xcode9.4  
+    install:
+      - brew update
+      - brew install bats-core  
+      - brew uninstall carthage
+      - bres install carthage --HEAD
+    name: "Carthage HEAD"
+    jobs:
+      include:
+        - stage: "Tests"
+          script: travis_wait 30 bats Amphorae/A/*
+          name: "A Amphorae"
+        - script: travis_wait 30 bats Amphorae/C/*
+          name: "C Amphorae"
+        - script: travis_wait 30 bats Amphorae/S/*
+          name: "S Amphorae"
+        - script: travis_wait 30 bats Amphorae/R/*
+          name: "R Amphorae"
