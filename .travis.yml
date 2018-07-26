@@ -13,13 +13,13 @@ install:
 jobs:
   include:
     - stage: "Tests"
-      script: bats Amphorae/A/*
+      script: travis_wait 30 bats Amphorae/A/*
       name: "A Amphorae"
-    - script: bats Amphorae/C/*
+    - script: travis_wait 30 bats Amphorae/C/*
       name: "C Amphorae"
-    - script: bats Amphorae/S/*
+    - script: travis_wait 30 bats Amphorae/S/*
       name: "S Amphorae"
-    - script: bats Amphorae/R/*
+    - script: travis_wait 30 bats Amphorae/R/*
       name: "R Amphorae"
 
 
