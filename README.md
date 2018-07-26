@@ -22,11 +22,28 @@ Amphorae are organized alphabetically in different folders.
 
 Don't over populate a folder for the sake of parallelizing [Travis](https://travis-ci.org/blender/Amphorae) job stages. No more than 10 Amphorae in one folder.
 
-To have [Travis run Amphorae](https://travis-ci.org/blender/Amphorae) of new folder `XYZ` add a stage to the [.travis.yml](https://github.com/blender/Amphorae/blob/master/.travis.yml) like so:
+To have [Travis run Amphorae](https://travis-ci.org/blender/Amphorae) for new folder `XYZ` add a two stages to the [.travis.yml](https://github.com/blender/Amphorae/blob/master/.travis.yml) like so:
 
+- HEAD Stage
 ```yaml
-- script: travis_wait 30 bats Amphorae/XYZ/*
-  name: "XYZ Amphorae"
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core 
+        - brew uninstall carthage
+        - brew install carthage --HEAD
+      script: travis_wait 30 bats Amphorae/XYZ/*
+      name: "S Amphorae - Carthage HEAD"
+```
+
+- Stable Stage
+```yaml
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core 
+      script: travis_wait 30 bats Amphorae/XYZ/*
+      name: "S Amphorae - Carthage Stable"
 ```
   
 ## Amphora template
