@@ -5,6 +5,13 @@ Carthage compatibility tests
 From Wikipedia: 
 > An amphora is a type of container of a characteristic shape and size.
 
+**Table of Contents**
+
+- [What is an Amphora](#what-is-an-amphora)
+- [Amphorae organization](#amphorae-organization)
+- [Amphora template](#amphora-template)
+- [Travis screenshots](#travis-screenshots)
+
 ## What is an Amphora
 
 An Amphora is simply a [bats test](https://github.com/bats-core/bats-core) that invokes [Carthage](https://github.com/Carthage/Carthage/) and checks the results of the invocation.
