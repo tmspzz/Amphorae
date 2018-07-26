@@ -30,6 +30,12 @@ jobs:
       install:
         - brew update
         - brew install bats-core    
+      script: travis_wait 30 bats Amphorae/L/*
+      name: "L Amphorae - Carthage Stable"
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core    
       script: travis_wait 30 bats Amphorae/M/*
       name: "M Amphorae - Carthage Stable"
     - stage: "Tests" 
@@ -68,6 +74,14 @@ jobs:
         - brew install carthage --HEAD 
       script: travis_wait 30 bats Amphorae/F/*
       name: "F Amphorae - Carthage HEAD"
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core
+        - brew uninstall carthage
+        - brew install carthage --HEAD
+      script: travis_wait 30 bats Amphorae/L/*
+      name: "L Amphorae - Carthage HEAD"
     - stage: "Tests"
       install:
         - brew update
