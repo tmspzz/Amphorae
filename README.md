@@ -33,7 +33,7 @@ To have [Travis run Amphorae](https://travis-ci.org/blender/Amphorae) for new fo
         - brew uninstall carthage
         - brew install carthage --HEAD
       script: travis_wait 30 bats Amphorae/XYZ/*
-      name: "S Amphorae - Carthage HEAD"
+      name: "XYZ Amphorae - Carthage HEAD"
 ```
 
 - Stable Stage
@@ -43,7 +43,7 @@ To have [Travis run Amphorae](https://travis-ci.org/blender/Amphorae) for new fo
         - brew update
         - brew install bats-core 
       script: travis_wait 30 bats Amphorae/XYZ/*
-      name: "S Amphorae - Carthage Stable"
+      name: "XYZ Amphorae - Carthage Stable"
 ```
   
 ## Amphora template
