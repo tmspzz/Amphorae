@@ -64,9 +64,10 @@ An Amphora template looks like the following
 ```bash
 #!/usr/bin/env bats
 
+export PROJECT_NAME=AFNetworking
+
 setup() {
 
-    export PROJECT_NAME=AFNetworking
     cd $BATS_TMPDIR
     rm -rf carthage_${PROJECT_NAME}
     mkdir carthage_${PROJECT_NAME} && cd carthage_${PROJECT_NAME}
@@ -82,7 +83,7 @@ teardown() {
     rm -rf carthage_${PROJECT_NAME}
 }
 
-@test "Carthage builds AFNetworking" {
+@test "Carthage builds ${PROJECT_NAME}" {
 
     run carthage update --no-use-binaries --cache-builds
 
