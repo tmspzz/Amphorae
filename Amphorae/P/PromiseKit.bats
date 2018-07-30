@@ -9,7 +9,7 @@ setup() {
     mkdir carthage_${PROJECT_NAME} && cd carthage_${PROJECT_NAME}
     printf 'github "%s/%s" ~> 6.2.9' "mxcl" "${PROJECT_NAME}" > Cartfile
 
-    echo $BATS_TMPDIR
+    echo "# ${BATS_TMPDIR}" >&3
 
 }
 

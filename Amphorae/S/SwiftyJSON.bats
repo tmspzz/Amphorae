@@ -1,14 +1,15 @@
 #!/usr/bin/env bats
 
+export PROJECT_NAME=SwiftyJSON
+
 setup() {
 
-    export PROJECT_NAME=SwiftyJSON
     cd $BATS_TMPDIR
     rm -rf carthage_${PROJECT_NAME}
     mkdir carthage_${PROJECT_NAME} && cd carthage_${PROJECT_NAME}
     printf 'github "%s/%s" ~> 4.1.0' "${PROJECT_NAME}" "${PROJECT_NAME}" > Cartfile
 
-    echo $BATS_TMPDIR
+    echo "# ${BATS_TMPDIR}" >&3
 
 }
 
@@ -18,7 +19,7 @@ teardown() {
     rm -rf carthage_${PROJECT_NAME}
 }
 
-@test "Carthage builds SwiftyJSON" {
+@test "Carthage builds ${PROJECT_NAME}" {
 
     run carthage update --no-use-binaries --cache-builds
 
