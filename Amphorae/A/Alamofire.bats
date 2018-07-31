@@ -8,7 +8,7 @@ setup() {
     mkdir carthage_${PROJECT_NAME} && cd carthage_${PROJECT_NAME}
     printf 'github "%s/%s" ~> 4.7.3' "${PROJECT_NAME}" "${PROJECT_NAME}" > Cartfile
 
-    echo $BATS_TMPDIR
+    echo "# ${BATS_TMPDIR}" >&3
 
 }
 
