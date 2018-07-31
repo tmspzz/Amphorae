@@ -59,8 +59,15 @@ jobs:
       install:
         - brew update
         - brew install bats-core    
-      script: travis_wait 30 bats Amphorae/M/*
+      script: travis_wait 30 bats Amphorae/M/
       name: "M Amphorae - Carthage Stable"
+    # Moya
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core    
+      script: travis_wait 30 bats Amphorae/M/Moya
+      name: "Moya Amphora - Carthage Stable"
     # S
     - stage: "Tests" 
       install:
@@ -101,8 +108,8 @@ jobs:
         - brew install bats-core
         - brew uninstall carthage
         - brew install carthage --HEAD 
-      script: travis_wait 30 bats Amphorae/F/facebook-ios-sdk
-      name: "facebook-ios-sdk Amphorae - Carthage HEAD"
+      script: travis_wait 30 bats Amphorae/F/
+      name: "F Amphorae - Carthage HEAD"
     # facebook-ios-sdk
     - stage: "Tests" 
       install:
@@ -110,8 +117,8 @@ jobs:
         - brew install bats-core
         - brew uninstall carthage
         - brew install carthage --HEAD 
-      script: travis_wait 30 bats Amphorae/F/
-      name: "F Amphorae - Carthage HEAD"
+      script: travis_wait 30 bats Amphorae/F/facebook-ios-sdk
+      name: "facebook-ios-sdk Amphora - Carthage HEAD"
     # H
     - stage: "Tests" 
       install:
@@ -146,8 +153,17 @@ jobs:
         - brew install bats-core
         - brew uninstall carthage
         - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/M/*
+      script: travis_wait 30 bats Amphorae/M/
       name: "M Amphorae - Carthage HEAD"
+    # Moya
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core
+        - brew uninstall carthage
+        - brew install carthage --HEAD
+      script: travis_wait 30 bats Amphorae/M/Moya
+      name: "Moya Amphora - Carthage HEAD"
     # S
     - stage: "Tests"
       install:
