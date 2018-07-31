@@ -21,8 +21,8 @@ teardown() {
 
 @test "Carthage builds ${PROJECT_NAME}" {
     
-    if [ -n "${skip_moya}" ]; then
-        skip "the variable skip_facebook_ios_sdk is not empy: ${skip_moya}"
+    if [ -n "${skip_Moya}" ]; then
+        skip "the variable skip_Moya is not empy: ${skip_moya}"
     fi
 
     # tvOS does not compile
