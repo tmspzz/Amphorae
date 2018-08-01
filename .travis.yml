@@ -89,13 +89,6 @@ jobs:
         - brew install bats-core    
       script: travis_wait 30 bats Amphorae/M/Moya
       name: "Moya Amphora - Carthage Stable"
-    # S
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core    
-      script: travis_wait 30 bats Amphorae/S/*
-      name: "S Amphorae - Carthage Stable"
     # R
     - stage: "Tests" 
       install:
@@ -103,6 +96,20 @@ jobs:
         - brew install bats-core
       script: travis_wait 30 bats Amphorae/R/*
       name: "R Amphorae - Carthage Stable"
+    # S
+    - stage: "Tests" 
+      install:
+        - brew update
+        - brew install bats-core    
+      script: travis_wait 30 bats Amphorae/S/*
+      name: "S Amphorae - Carthage Stable"
+    # T
+    - stage: "Tests" 
+      install:
+        - brew update
+        - brew install bats-core    
+      script: travis_wait 30 bats Amphorae/T/*
+      name: "T Amphorae - Carthage Stable"
   # Carthage Stable
     # A
     - stage: "Tests"
@@ -212,15 +219,6 @@ jobs:
         - brew install carthage --HEAD
       script: travis_wait 30 bats Amphorae/M/Moya
       name: "Moya Amphora - Carthage HEAD"
-    # S
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core 
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/S/*
-      name: "S Amphorae - Carthage HEAD"
     # R
     - stage: "Tests"
       install:
@@ -230,4 +228,22 @@ jobs:
         - brew install carthage --HEAD
       script: travis_wait 30 bats Amphorae/R/*
       name: "R Amphorae - Carthage HEAD"
+    # S
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core 
+        - brew uninstall carthage
+        - brew install carthage --HEAD
+      script: travis_wait 30 bats Amphorae/S/*
+      name: "S Amphorae - Carthage HEAD"
+    # T
+    - stage: "Tests"
+      install:
+        - brew update
+        - brew install bats-core 
+        - brew uninstall carthage
+        - brew install carthage --HEAD
+      script: travis_wait 30 bats Amphorae/T/*
+      name: "T Amphorae - Carthage HEAD"
 
