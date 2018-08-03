@@ -16,7 +16,7 @@ jobs:
         - brew install bats-core   
       script:
         - export apollo_ios_branch=master
-        - travis_wait 30 bats Amphorae/A/apollo-ios.bats
+        - travis_wait 30 bats Amphorae/A/*
         - unset apollo_ios_branch
       name: "A Amphorae - Carthage Stable"
     # B
@@ -64,6 +64,13 @@ jobs:
         - brew install bats-core  
       script: travis_wait 30 bats Amphorae/H/*
       name: "H Amphorae - Carthage Stable"
+    # I
+    - stage: "Tests" 
+      install:
+        - brew update
+        - brew install bats-core  
+      script: travis_wait 30 bats Amphorae/I/*
+      name: "I Amphorae - Carthage Stable"
     # K
     - stage: "Tests" 
       install:
@@ -121,7 +128,10 @@ jobs:
         - brew install bats-core 
         - brew uninstall carthage
         - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/A/*
+      script: 
+        - export apollo_ios_branch=master
+        - travis_wait 30 bats Amphorae/A/*
+        - unset apollo_ios_branch
       name: "A Amphorae - Carthage HEAD"
     # B
     - stage: "Tests"
@@ -186,6 +196,15 @@ jobs:
         - brew install carthage --HEAD 
       script: travis_wait 30 bats Amphorae/H/*
       name: "H Amphorae - Carthage HEAD"
+    # I
+    - stage: "Tests" 
+      install:
+        - brew update
+        - brew install bats-core
+        - brew uninstall carthage
+        - brew install carthage --HEAD 
+      script: travis_wait 30 bats Amphorae/I/*
+      name: "I Amphorae - Carthage HEAD"
     # K
     - stage: "Tests"
       install:
