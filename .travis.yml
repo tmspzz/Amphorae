@@ -58,12 +58,12 @@ jobs:
   #       - unset skip_facebook_ios_sdk
   #     name: "F Amphorae - Carthage Stable"
     # H
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core  
-      script: travis_wait 30 bats Amphorae/H/Hockey.bats
-      name: "H Amphorae - Carthage Stable"
+    # - stage: "Tests" 
+    #  install:
+    #    - brew update
+    #    - brew install bats-core  
+    #  script: travis_wait 30 bats Amphorae/H/Hockey.bats
+    #  name: "H Amphorae - Carthage Stable"
     # # I
     # - stage: "Tests" 
     #   install:
@@ -193,7 +193,11 @@ jobs:
         - brew update
         - brew install bats-core
         - brew uninstall carthage
-        - brew install carthage --HEAD 
+        - git clone https://github.com/blender/Carthage.git
+        - |
+        cd Carthage
+        git checkout fix/issue-2738-hockey
+        make install
       script: travis_wait 30 bats Amphorae/H/Hockey.bats
       name: "H Amphorae - Carthage HEAD"
     # # I
