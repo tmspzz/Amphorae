@@ -194,10 +194,7 @@ jobs:
         - brew install bats-core
         - brew uninstall carthage
         - git clone https://github.com/blender/Carthage.git
-        - |
-        cd Carthage
-        git checkout fix/issue-2738-hockey
-        make install
+        - cd Carthage && git checkout fix/issue-2738-hockey && make install
       script: travis_wait 30 bats Amphorae/H/Hockey.bats
       name: "H Amphorae - Carthage HEAD"
     # # I
