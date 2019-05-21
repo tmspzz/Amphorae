@@ -20,9 +20,9 @@ teardown() {
 
 @test "Carthage builds ${PROJECT_NAME}" {
 
-    run carthage update --no-use-binaries --cache-builds
-
-    [ "$status" -eq 0 ]
+    carthage update --no-use-binaries --cache-builds
+ 
+    [ 1 -eq 2 ]
 
     # Version file
     [ -e "Carthage/Build/.${PROJECT_NAME}.version" ]
