@@ -1,6 +1,6 @@
 os: osx
 language: objective-c
-osx_image: xcode9.4    
+osx_image: xcode10.2    
 
 branches:
   only:
@@ -8,264 +8,265 @@ branches:
 
 jobs:
   include:
-  # Carthage Stable
-    # A
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core   
-      script:
-        - export apollo_ios_branch=master
-        - travis_wait 30 bats Amphorae/A/*
-        - unset apollo_ios_branch
-      name: "A Amphorae - Carthage Stable"
-    # B
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core   
-      script: travis_wait 30 bats Amphorae/B/*
-      name: "B Amphorae - Carthage Stable"
-    # C
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core  
-      script: travis_wait 30 bats Amphorae/C/*
-      name: "C Amphorae - Carthage Stable"
-    # D
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core  
-      script: travis_wait 30 bats Amphorae/D/*
-      name: "D Amphorae - Carthage Stable"
-    # E
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core  
-      script: travis_wait 30 bats Amphorae/E/*
-      name: "E Amphorae - Carthage Stable"
-    # F
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core  
-      script:
-        - export skip_facebook_ios_sdk=1 
-        - travis_wait 30 bats Amphorae/F/*
-        - unset skip_facebook_ios_sdk
-      name: "F Amphorae - Carthage Stable"
+  # # Carthage Stable
+  #   # A
+  #   - stage: "Tests" 
+  #     install:
+  #       - brew update
+  #       - brew install bats-core   
+  #     script:
+  #       - export apollo_ios_branch=master
+  #       - travis_wait 30 bats Amphorae/A/*
+  #       - unset apollo_ios_branch
+  #     name: "A Amphorae - Carthage Stable"
+  #   # B
+  #   - stage: "Tests" 
+  #     install:
+  #       - brew update
+  #       - brew install bats-core   
+  #     script: travis_wait 30 bats Amphorae/B/*
+  #     name: "B Amphorae - Carthage Stable"
+  #   # C
+  #   - stage: "Tests" 
+  #     install:
+  #       - brew update
+  #       - brew install bats-core  
+  #     script: travis_wait 30 bats Amphorae/C/*
+  #     name: "C Amphorae - Carthage Stable"
+  #   # D
+  #   - stage: "Tests" 
+  #     install:
+  #       - brew update
+  #       - brew install bats-core  
+  #     script: travis_wait 30 bats Amphorae/D/*
+  #     name: "D Amphorae - Carthage Stable"
+  #   # E
+  #   - stage: "Tests" 
+  #     install:
+  #       - brew update
+  #       - brew install bats-core  
+  #     script: travis_wait 30 bats Amphorae/E/*
+  #     name: "E Amphorae - Carthage Stable"
+  #   # F
+  #   - stage: "Tests" 
+  #     install:
+  #       - brew update
+  #       - brew install bats-core  
+  #     script:
+  #       - export skip_facebook_ios_sdk=1 
+  #       - travis_wait 30 bats Amphorae/F/*
+  #       - unset skip_facebook_ios_sdk
+  #     name: "F Amphorae - Carthage Stable"
+    # H
+    # - stage: "Tests" 
+    #  install:
+    #    - brew update
+    #    - brew install bats-core  
+    #  script: travis_wait 30 bats Amphorae/H/Hockey.bats
+    #  name: "H Amphorae - Carthage Stable"
+    # # I
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core  
+    #   script: travis_wait 30 bats Amphorae/I/*
+    #   name: "I Amphorae - Carthage Stable"
+    # # K
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core  
+    #   script: travis_wait 30 bats Amphorae/K/*
+    #   name: "K Amphorae - Carthage Stable"  
+    # # L
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core   
+    #   script: travis_wait 30 bats Amphorae/L/*
+    #   name: "L Amphorae - Carthage Stable"
+    # # M
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core    
+    #   script: travis_wait 30 bats Amphorae/M/
+    #   name: "M Amphorae - Carthage Stable"
+    # # Moya
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core    
+    #   script: travis_wait 30 bats Amphorae/M/Moya
+    #   name: "Moya Amphora - Carthage Stable"
+    # # R
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #   script: travis_wait 30 bats Amphorae/R/*
+    #   name: "R Amphorae - Carthage Stable"
+    # # S
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core    
+    #   script: travis_wait 30 bats Amphorae/S/*
+    #   name: "S Amphorae - Carthage Stable"
+    # # T
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core    
+    #   script: travis_wait 30 bats Amphorae/T/*
+    #   name: "T Amphorae - Carthage Stable"
+  # Carthage Unstable
+    # # A
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core 
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: 
+    #     - export apollo_ios_branch=master
+    #     - travis_wait 30 bats Amphorae/A/*
+    #     - unset apollo_ios_branch
+    #   name: "A Amphorae - Carthage HEAD"
+    # # B
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/B/*
+    #   name: "B Amphorae - Carthage HEAD"
+    # # C
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/C/*
+    #   name: "C Amphorae - Carthage HEAD"
+    # # D
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/D/*
+    #   name: "D Amphorae - Carthage HEAD"
+    # # E
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/E/*
+    #   name: "E Amphorae - Carthage HEAD"
+    # # F
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD 
+    #   script: travis_wait 30 bats Amphorae/F/
+    #   name: "F Amphorae - Carthage HEAD"
+    # # facebook-ios-sdk
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD 
+    #   script: travis_wait 30 bats Amphorae/F/facebook-ios-sdk
+    #   name: "facebook-ios-sdk Amphora - Carthage HEAD"
     # H
     - stage: "Tests" 
       install:
         - brew update
-        - brew install bats-core  
-      script: travis_wait 30 bats Amphorae/H/*
-      name: "H Amphorae - Carthage Stable"
-    # I
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core  
-      script: travis_wait 30 bats Amphorae/I/*
-      name: "I Amphorae - Carthage Stable"
-    # K
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core  
-      script: travis_wait 30 bats Amphorae/K/*
-      name: "K Amphorae - Carthage Stable"  
-    # L
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core   
-      script: travis_wait 30 bats Amphorae/L/*
-      name: "L Amphorae - Carthage Stable"
-    # M
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core    
-      script: travis_wait 30 bats Amphorae/M/
-      name: "M Amphorae - Carthage Stable"
-    # Moya
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core    
-      script: travis_wait 30 bats Amphorae/M/Moya
-      name: "Moya Amphora - Carthage Stable"
-    # R
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core
-      script: travis_wait 30 bats Amphorae/R/*
-      name: "R Amphorae - Carthage Stable"
-    # S
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core    
-      script: travis_wait 30 bats Amphorae/S/*
-      name: "S Amphorae - Carthage Stable"
-    # T
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core    
-      script: travis_wait 30 bats Amphorae/T/*
-      name: "T Amphorae - Carthage Stable"
-  # Carthage Stable
-    # A
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core 
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: 
-        - export apollo_ios_branch=master
-        - travis_wait 30 bats Amphorae/A/*
-        - unset apollo_ios_branch
-      name: "A Amphorae - Carthage HEAD"
-    # B
-    - stage: "Tests"
-      install:
-        - brew update
         - brew install bats-core
         - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/B/*
-      name: "B Amphorae - Carthage HEAD"
-    # C
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/C/*
-      name: "C Amphorae - Carthage HEAD"
-    # D
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/D/*
-      name: "D Amphorae - Carthage HEAD"
-    # E
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/E/*
-      name: "E Amphorae - Carthage HEAD"
-    # F
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD 
-      script: travis_wait 30 bats Amphorae/F/
-      name: "F Amphorae - Carthage HEAD"
-    # facebook-ios-sdk
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD 
-      script: travis_wait 30 bats Amphorae/F/facebook-ios-sdk
-      name: "facebook-ios-sdk Amphora - Carthage HEAD"
-    # H
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD 
-      script: travis_wait 30 bats Amphorae/H/*
+        - git clone https://github.com/blender/Carthage.git
+        - cd Carthage && git checkout fix/issue-2738-hockey && make install && cd -
+      script: travis_wait 30 bats Amphorae/H/Hockey.bats
       name: "H Amphorae - Carthage HEAD"
-    # I
-    - stage: "Tests" 
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD 
-      script: travis_wait 30 bats Amphorae/I/*
-      name: "I Amphorae - Carthage HEAD"
-    # K
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/K/*
-      name: "K Amphorae - Carthage HEAD"
-    # L
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/L/*
-      name: "L Amphorae - Carthage HEAD"
-    # M
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/M/
-      name: "M Amphorae - Carthage HEAD"
-    # Moya
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/M/Moya
-      name: "Moya Amphora - Carthage HEAD"
-    # R
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core 
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/R/*
-      name: "R Amphorae - Carthage HEAD"
-    # S
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core 
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/S/*
-      name: "S Amphorae - Carthage HEAD"
-    # T
-    - stage: "Tests"
-      install:
-        - brew update
-        - brew install bats-core 
-        - brew uninstall carthage
-        - brew install carthage --HEAD
-      script: travis_wait 30 bats Amphorae/T/*
-      name: "T Amphorae - Carthage HEAD"
+    # # I
+    # - stage: "Tests" 
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD 
+    #   script: travis_wait 30 bats Amphorae/I/*
+    #   name: "I Amphorae - Carthage HEAD"
+    # # K
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/K/*
+    #   name: "K Amphorae - Carthage HEAD"
+    # # L
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/L/*
+    #   name: "L Amphorae - Carthage HEAD"
+    # # M
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/M/
+    #   name: "M Amphorae - Carthage HEAD"
+    # # Moya
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/M/Moya
+    #   name: "Moya Amphora - Carthage HEAD"
+    # # R
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core 
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/R/*
+    #   name: "R Amphorae - Carthage HEAD"
+    # # S
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core 
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/S/*
+    #   name: "S Amphorae - Carthage HEAD"
+    # # T
+    # - stage: "Tests"
+    #   install:
+    #     - brew update
+    #     - brew install bats-core 
+    #     - brew uninstall carthage
+    #     - brew install carthage --HEAD
+    #   script: travis_wait 30 bats Amphorae/T/*
+    #   name: "T Amphorae - Carthage HEAD"
 
